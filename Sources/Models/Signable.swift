@@ -202,23 +202,23 @@ extension FCL {
       var findInsideSigners: [String] {
         // Inside Signers Are: (authorizers + proposer) - payer
 
-        var ins: [String] = []
+        var insideSignatures: [String] = []
 
         authorizations.forEach {
-          if !ins.contains($0) {
-            ins.append($0)
+          if !insideSignatures.contains($0) {
+            insideSignatures.append($0)
           }
         }
 
-        if let proposer = proposer, !ins.contains(proposer) {
-          ins.append(proposer)
+        if let proposer = proposer, !insideSignatures.contains(proposer) {
+          insideSignatures.append(proposer)
         }
 
         if let payer = payer {
-          ins.removeAll { $0 == payer }
+          insideSignatures.removeAll { $0 == payer }
         }
 
-        return ins
+        return insideSignatures
       }
 
         var findOutsideSigners: [String] {
