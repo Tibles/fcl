@@ -61,6 +61,11 @@ public extension FCL {
             SignatureResolver(),
         ]
         _ = try await pipe(ix: &ix, resolvers: resolvers)
+
+      var authorizations = ix.authorizations
+      let parent = authorizations.remove(at: 0)
+      authorizations.insert(parent, at: 1)
+      ix.authorizations = authorizations
         return try await sendIX(ix: ix)
     }
 
