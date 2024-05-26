@@ -199,27 +199,27 @@ extension FCL {
             return self
         }
 
-      var findInsideSigners: [String] {
-        // Inside Signers Are: (authorizers + proposer) - payer
+        var findInsideSigners: [String] {
+          // Inside Signers Are: (authorizers + proposer) - payer
 
-        var insideSignatures: [String] = []
+          var insideSignatures: [String] = []
 
-        authorizations.forEach {
-          if !insideSignatures.contains($0) {
-            insideSignatures.append($0)
+          authorizations.forEach {
+            if !insideSignatures.contains($0) {
+              insideSignatures.append($0)
+            }
           }
-        }
 
-        if let proposer = proposer, !insideSignatures.contains(proposer) {
-          insideSignatures.append(proposer)
-        }
+          if let proposer = proposer, !insideSignatures.contains(proposer) {
+            insideSignatures.append(proposer)
+          }
 
-        if let payer = payer {
-          insideSignatures.removeAll { $0 == payer }
-        }
+          if let payer = payer {
+            insideSignatures.removeAll { $0 == payer }
+          }
 
-        return insideSignatures
-      }
+          return insideSignatures
+        }
 
         var findOutsideSigners: [String] {
             // Outside Signers Are: (payer)
