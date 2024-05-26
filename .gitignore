@@ -1,0 +1,6 @@
+# apple/macos
+.DS_Store
+
+# swift package build directory
+.build
+
