@@ -15,12 +15,43 @@ import WalletConnectSign
 import WalletConnectUtils
 import Gzip
 
-extension WebSocket: WebSocketConnecting {}
+extension WebSocket: WebSocketConnecting {
+  public var isConnected: Bool {
+    true
+  }
+  
+  public var onConnect: (() -> Void)? {
+    get {
+      nil
+    }
+    set(newValue) {
+
+    }
+  }
+  
+  public var onDisconnect: (((any Error)?) -> Void)? {
+    get {
+      nil
+    }
+    set(newValue) {
+
+    }
+  }
+  
+  public var onText: ((String) -> Void)? {
+    get {
+      nil
+    }
+    set(newValue) {
+      
+    }
+  }
+}
 
 internal class SocketFactory: WebSocketFactory {
     var socket: WebSocket?
     func create(with url: URL) -> WebSocketConnecting {
-        let socket = WebSocket(url: url)
+      let socket = WebSocket(request: URLRequest(url: url))
         self.socket = socket
         return socket
     }
