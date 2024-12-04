@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/outblock/flow-swift.git", .exact("0.3.1")),
         .package(url: "https://github.com/daltoniam/Starscream", .exact("4.0.6")),
-        .package(url: "https://github.com/WalletConnect/WalletConnectSwiftV2", .exact("1.6.11")),
+        .package(name: "AppKit", url: "https://github.com/reown-com/reown-swift", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/1024jp/GzipSwift", .exact("5.2.0")),
     ],
     targets: [
@@ -26,8 +26,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Flow", package: "flow-swift"),
                 .product(name: "Starscream", package: "Starscream"),
-                .product(name: "WalletConnect", package: "WalletConnectSwiftV2"),
-                .product(name: "WalletConnectAuth", package: "WalletConnectSwiftV2"),
+                .product(name: "AppKit", package: "AppKit"),
                 .product(name: "Gzip", package: "GzipSwift"),
             ],
             path: "Sources"

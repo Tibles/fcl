@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "reown",
+        "repositoryURL": "https://github.com/reown-com/reown-swift",
+        "state": {
+          "branch": null,
+          "revision": "a27be063042e54685b0f8a2bde9c143c5da69312",
+          "version": "1.0.7"
+        }
+      },
+      {
         "package": "Starscream",
         "repositoryURL": "https://github.com/daltoniam/Starscream",
         "state": {
@@ -65,12 +74,12 @@
         }
       },
       {
-        "package": "WalletConnect",
-        "repositoryURL": "https://github.com/WalletConnect/WalletConnectSwiftV2",
+        "package": "CoinbaseWalletSDK",
+        "repositoryURL": "https://github.com/MobileWalletProtocol/wallet-mobile-sdk",
         "state": {
           "branch": null,
-          "revision": "84b09a13b48d08f1092a7494e2ad70cbb92545c2",
-          "version": "1.6.11"
+          "revision": "4aa89e682f8d7ab1515d85d0797f0d25306bb56a",
+          "version": "1.0.5"
         }
       }
     ]
